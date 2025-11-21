@@ -7,6 +7,7 @@ function App() {
     const saved = localStorage.getItem('darkMode')
     return saved !== null ? JSON.parse(saved) : true
   })
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const sectionsRef = useRef([])
 
@@ -29,6 +30,14 @@ function App() {
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode)
+  }
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
   }
 
   useEffect(() => {
@@ -73,11 +82,16 @@ function App() {
             <img src="/logo-fialove.svg" alt="Nexorum Logo" className="logo" />
             <span className="brand-name">Nexorum</span>
           </div>
-          <nav className="nav">
-            <a href="#home" className={activeSection === 'home' ? 'active' : ''}>Domů</a>
-            <a href="#about" className={activeSection === 'about' ? 'active' : ''}>O nás</a>
-            <a href="#projects" className={activeSection === 'projects' ? 'active' : ''}>Projekty</a>
-            <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Kontakt</a>
+          <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+            <span className={isMenuOpen ? 'open' : ''}></span>
+            <span className={isMenuOpen ? 'open' : ''}></span>
+            <span className={isMenuOpen ? 'open' : ''}></span>
+          </button>
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+            <a href="#home" className={activeSection === 'home' ? 'active' : ''} onClick={closeMenu}>Domů</a>
+            <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={closeMenu}>O nás</a>
+            <a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={closeMenu}>Projekty</a>
+            <a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={closeMenu}>Kontakt</a>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
               {isDarkMode ? '☀️' : '🌙'}
             </button>
