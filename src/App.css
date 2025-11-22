@@ -861,7 +861,7 @@ textarea.form-input {
 
 @media (max-width: 768px) {
   .light-mode .nav {
-    background: #ffffffd0 !important;
+    background: #ffffffe5 !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border-left: 1px solid #e5e7eb;
