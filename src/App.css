@@ -861,7 +861,6 @@ textarea.form-input {
 
 @media (max-width: 768px) {
   .light-mode .nav {
-    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
   }
 }
@@ -939,7 +938,11 @@ textarea.form-input {
 
   .nav a {
     font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav a::after {
@@ -947,9 +950,10 @@ textarea.form-input {
   }
 
   .theme-toggle {
-    width: 45px;
-    height: 45px;
-    font-size: 1.25rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    min-height: 48px;
   }
 
   .section-title {
@@ -1001,12 +1005,18 @@ textarea.form-input {
   }
 
   .hamburger {
-    width: 28px;
-    height: 23px;
+    width: 32px;
+    height: 28px;
+    padding: 10px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hamburger span {
-    width: 28px;
+    width: 32px;
+    height: 3.5px;
   }
 
   .hero-title {
@@ -1025,13 +1035,15 @@ textarea.form-input {
     flex-direction: column;
     width: 100%;
     padding: 0 1.5rem;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .btn {
     width: 100%;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 1.125rem 2rem;
+    min-height: 52px;
+    font-size: 1rem;
   }
 
   .section-title {
@@ -1071,11 +1083,20 @@ section:not(.logo-loop) {
 @media (max-width: 768px) {
   html {
     scroll-snap-type: none;
+    /* Fix pro Chrome Android scrolling */
+    overscroll-behavior-y: contain;
+  }
+  
+  body {
+    /* Prevent bounce scrolling na Android */
+    overscroll-behavior: none;
   }
   
   section:not(.logo-loop) {
     scroll-snap-align: none;
     min-height: auto;
+    /* Lepší spacing pro Android */
+    padding-bottom: 2rem;
   }
 }
 
