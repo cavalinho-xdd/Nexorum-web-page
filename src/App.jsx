@@ -269,7 +269,7 @@ function App() {
                 <div className="contact-icon">📧</div>
                 <div>
                   <h4>Email</h4>
-                  <a href="mailto:michal.hyvnar@mendelova-stredni.cz">michal.hyvnar@mendelova-stredni.cz</a>
+                  <a href="mailto:jakub.muzik@mendelova-stredni.cz">jakub.muzik@mendelova-stredni.cz</a>
                 </div>
               </div>
               <div className="contact-item">
@@ -288,13 +288,31 @@ function App() {
               </div>
             </div>
             <div className="contact-form">
-              <form onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder="Vaše jméno" className="form-input" />
-                <input type="email" placeholder="Váš email" className="form-input" />
-                <textarea placeholder="Vaše zpráva" rows="5" className="form-input"></textarea>
+              <form action="https://formspree.io/f/mankqrbj" method="POST">
+                <input 
+                  type="text" 
+                  name="Jméno"   
+                  placeholder="Vaše jméno" 
+                  className="form-input" 
+                  required       
+                />
+                <input 
+                  type="email"
+                  name="E-mail"
+                  placeholder="Váš email" 
+                  className="form-input" 
+                  required 
+                />
+                <textarea 
+                  name="Zpráva"
+                  placeholder="Vaše zpráva" 
+                  rows="5" 
+                  className="form-input" 
+                  required
+                ></textarea>
                 <button type="submit" className="btn btn-primary">Odeslat zprávu</button>
               </form>
-            </div>
+          </div>
           </div>
         </div>
       </section>
