@@ -90,6 +90,7 @@ function App() {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <a href="#home" className={activeSection === 'home' ? 'active' : ''} onClick={closeMenu}>Domů</a>
             <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={closeMenu}>O nás</a>
+            <a href="#ja" className={activeSection === 'ja' ? 'active' : ''} onClick={closeMenu}>JA Czech</a>
             <a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={closeMenu}>Projekty</a>
             <a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={closeMenu}>Kontakt</a>
             <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
