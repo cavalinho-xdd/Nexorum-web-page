@@ -764,10 +764,6 @@ textarea.form-input {
 
 .light-mode .nav a.active {
   color: var(--purple-700);
-  background: transparent !important; /* VYNUTIT průhlednost */
-  box-shadow: none !important;        /* Zrušit stíny */
-  border: none !important;            /* Zrušit rámečky */
-  padding: 0 !important;
 }
 
 .light-mode .hero-subtitle,
@@ -863,6 +859,12 @@ textarea.form-input {
   background: var(--purple-700);
 }
 
+@media (max-width: 768px) {
+  .light-mode .nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+  }
+}
 
 .light-mode .blob-1 {
   background: linear-gradient(135deg, var(--purple-400), var(--indigo-600));
@@ -915,10 +917,11 @@ textarea.form-input {
     position: fixed;
     top: 0;
     right: -100%;
-    height: 100vh;
-    width: 250px;
+    height: 100dvh;
+    width: 100%;
+    max-width: 100%;
     background: rgba(17, 24, 39, 0.98);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -926,6 +929,8 @@ textarea.form-input {
     transition: right 0.3s ease;
     border-left: 1px solid rgba(139, 92, 246, 0.2);
     z-index: 1000;
+    padding-top: max(2rem, env(safe-area-inset-top));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
   }
 
   .nav.nav-open {
@@ -983,6 +988,7 @@ textarea.form-input {
 @media (max-width: 480px) {
   .header .container {
     padding: 0 1rem;
+    padding-top: max(0.5rem, env(safe-area-inset-top));
   }
 
   .logo {
@@ -992,11 +998,6 @@ textarea.form-input {
 
   .brand-name {
     font-size: 1.2rem;
-  }
-
-  .nav {
-    width: 80%;
-    max-width: 280px;
   }
 
   .hamburger {
@@ -1009,19 +1010,50 @@ textarea.form-input {
   }
 
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    padding: 0 0.5rem;
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
   }
 
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    padding: 0 1rem;
+  }
+
+  .section-subtitle {
+    padding: 0 1rem;
   }
 
   .container {
     padding: 0 1rem;
+  }
+
+  .about-card,
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .contact-grid {
+    padding: 0 0.5rem;
   }
 }
 
@@ -1034,6 +1066,17 @@ html {
 section:not(.logo-loop) {
   scroll-snap-align: start;
   min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+  
+  section:not(.logo-loop) {
+    scroll-snap-align: none;
+    min-height: auto;
+  }
 }
 
 .footer {
