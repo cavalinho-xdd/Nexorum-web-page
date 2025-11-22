@@ -1,18 +1,3 @@
-Chápu, ty tři otazníky znamenají: **"Už mi to prostě dej celé hotové, ať to tam můžu jen vložit a funguje to."** 😅
-
-Tady máš **KOMPLETNÍ `App.css`**.
-
-Jsou v něm zapracované:
-
-1.  ✅ **iPhone fixy:** Ošetřený Notch (výřez) a spodní lišta (`safe-area-inset`).
-2.  ✅ **100dvh:** Menu se nebude krýt s adresním řádkem v Safari.
-3.  ✅ **Čitelnost:** Menu na mobilu má tmavší pozadí, aby text nezanikal v "blobech".
-4.  ✅ **Velikosti:** Zmenšené nadpisy pro malé displeje.
-5.  ✅ **Oprava:** Žádné otravné obdélníky v menu.
-
-**Zkopíruj tohle celé, smaž vše v `App.css` a vlož tam toto:**
-
-```css
 * {
   margin: 0;
   padding: 0;
@@ -1100,4 +1085,3 @@ section:not(.logo-loop) {
   background: var(--purple-600);
   color: var(--white);
 }
-```
