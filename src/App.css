@@ -180,7 +180,7 @@ body {
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--purple-200);ffffffc
+  color: var(--purple-200);
   margin-bottom: 2rem;
   line-height: 1.8;
 }
@@ -422,7 +422,7 @@ body {
 
 .project-card::before {
   content: '';
-  position: absolute;ffffffc
+  position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
@@ -702,9 +702,15 @@ textarea.form-input {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: var(--purple-300);
+}
+
+.theme-toggle svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .theme-toggle:hover {
@@ -712,12 +718,22 @@ textarea.form-input {
   transform: scale(1.1);
 }
 
+.theme-toggle:hover svg {
+  transform: rotate(15deg);
+  color: var(--white);
+}
+
+.light-mode .theme-toggle {
+  color: var(--purple-700);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 30px;ffffffc
+  width: 30px;
   height: 25px;
   background: transparent;
   border: none;
